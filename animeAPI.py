@@ -13,8 +13,18 @@ class AnimeAPI():
         self.data = self._download_url(self.url)
 
     def print_data(self):
-        print(self.data['data']['title'])
-        print(self.data['data']['synopsis'])
+        # print(self.data['data']['title'])
+        # print(self.data['data']['synopsis'])
+        list = []
+        list.append(self.data['data']['title'])
+        list.append(self.data['data']['synopsis'])
+        list.append(self.data['data']['rating'])
+        list.append(self.data['data']['episodes'])
+        list.append(self.data['data']['status'])
+        list.append(self.data['data']['year'])
+        list.append(self.data['data']['images']['jpg']['image_url'])
+        # print(list)
+        return list
 
     def _download_url(self, url: str) -> dict:
         # TODO: Implement web api request code in a way that supports ALL types of web APIs
@@ -43,6 +53,19 @@ class AnimeAPI():
                 response.close()
 
         return r_obj
+
+
+def grab_data():
+    # a = AnimeAPI()
+    # a.load_data()
+    # list = a.print_data()
+    # print(list)
+    # return list
+    randomizer = AnimeAPI()
+    randomizer.get_random_anime()
+    list = randomizer.print_data()
+
+    return list
 
 
 if __name__ == '__main__':
