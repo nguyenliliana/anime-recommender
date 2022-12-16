@@ -1,4 +1,4 @@
-#Anime Recommender#
+# Anime Recommender
 
 Recommends random anime that have a rating greater than six with each button click for adventurous anime watchers.
 Built with Flask, Python, and HTML/CSS and utilizes Jikan API to retrieve information such as title, synopsis, rating, and images from MyAnimeList.
